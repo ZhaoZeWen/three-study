@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		span{
+			color: red;
+			font-size: 20px;
+		}
+		span:hover::before{
+			content: "nihao";
+			font-size: 18px;
+			color: green;
+		}
+		span:active::after{
+			content: "#$$";
+			font-size: 10px;
+			color: green;
+		}
+		.father>p{
+			color: blueviolet;
+			font-size: 16px;
+		}
+		p::first-letter{
+			font-size: 18px;
+			color: blueviolet;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<span>222</span>
+	<div class="father">
+		<p>中国很美</p>
+		<span>那气质必须的</span>
+		<div class="son">
+			<p>好像都是哈那就那样吧哈</p>
+		</div>
+	</div>
+</body>
+</html>

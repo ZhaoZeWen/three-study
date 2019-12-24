@@ -1,0 +1,2396 @@
+// 左浮动
+$float-left: left;
+// 右浮动
+$float-right: right;
+// 字体大小
+$font-size14: 14px;
+$font-size15: 15px;
+$font-size16: 16px;
+$font-size34: 34px;
+// 字体颜色
+$font-white: #fff;
+$font-gray: #acacac;
+$font-button: #036eb4;
+// 文字居中
+$text-center: center;
+// 宽度100%
+$width-hundred: 100%;
+// 左边框
+$border-left: 2px solid #fff;
+// 右边框
+$border-right: 2px solid #fff;
+// 边框
+$border-basis: 2px solid #036eb4;
+// 背景平铺
+$background-size: cover;
+// 固定定位
+$position-fixed: fixed;
+// 绝对定位
+$position-absolute: absolute;
+// 相对定位
+$position-relative: relative;
+// 块元素居中
+$margin-auto: 0 auto;
+// 鼠标样式
+$cursor-pointer: pointer;
+// 添加跨浏览器的圆角边框
+@mixin border-radius {
+	-webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+}
+@mixin border-radius2 {
+	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+@mixin border-radius8 {
+	-webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+}
+// 添加跨浏览器的阴影
+@mixin box-shadow {
+	-webkit-box-shadow: 1px 1px 10px #76add9;
+    -moz-box-shadow: 1px 1px 10px #76add9;
+    -o-box-shadow: 1px 1px 10px #76add9;
+    -ms-box-shadow: 1px 1px 10px #76add9;
+    box-shadow: 1px 1px 10px #76add9;
+}
+// 无阴影
+@mixin box-shadow-none {
+	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+}
+@mixin box-shadow-black {
+	-webkit-box-shadow: 0 1px 7px rgba(1, 1, 0.5, 0.3);
+    -moz-box-shadow: 0 1px 7px rgba(1, 1, 0.5, 0.3);
+    -o-box-shadow: 0 1px 7px rgba(1, 1, 0.5, 0.3);
+    -ms-box-shadow: 0 1px 7px rgba(1, 1, 0.5, 0.3);
+    box-shadow: 0 1px 7px rgba(1, 1, 0.5, 0.3);
+}
+// 去除移动端长按导致选择文字
+@mixin user-select {
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+// 居中布局
+@mixin position-center {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+// 过渡效果
+@mixin transition-result {
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+// 盒尺寸
+$box-sizing: border-box;
+input[type=button],input[type=text],input[type=password] {
+	-webkit-appearance:none;
+	outline:none;
+}
+
+/* login页样式*/
+#login {
+	.header {
+		height: 0.93rem;
+		width: $width-hundred;
+		background: url("../img/bg_header.png") repeat-x;
+	}
+	.log {
+		font-size: $font-size34;
+		float: $float-left;
+		color: $font-white;
+		font-family: "宋体";
+		font-weight: 900;
+		width: 2.2rem;
+		line-height: 0.93rem;
+		margin-left: 51px;
+		@include user-select;
+	}
+	.adv {
+		float: $float-right;
+		height: 0.93rem;
+		color: #e7f1f8;
+		span {
+			font-size: $font-size16;
+			a {
+				float: $float-left;
+				width: 0.64rem;
+				height: 0.18rem;
+				margin-top: 0.38rem;
+				text-align: $text-center;
+				font-size: $font-size16;
+				line-height: 0.18rem;
+				color: $font-white;
+			}
+		}
+		span:nth-child(2) a {
+			border-left: 2px solid $font-white;
+			border-right: 2px solid $font-white;
+		}
+	}
+	.foot {
+		height: 0.72rem;
+		width: $width-hundred;
+		background: url("../img/bg_foot.png") no-repeat;
+		background-size: $background-size;
+		position: $position-fixed;
+		bottom: 0;
+		h3 {
+			font-size: $font-size16;
+			color: $font-white;
+			width: 550px;
+			line-height: 18px;
+			text-align: $text-center;
+			margin: $margin-auto;
+		}
+	}
+	.dailog {
+		width: 5.5rem;
+		height: 3.64rem;
+		background: url("../img/dailog.png") no-repeat;
+		background-size: $background-size;
+		position: $position-fixed;
+		@include position-center;
+	}
+
+	.login_form {
+		margin: 0.5rem auto;
+		p {
+			width: 4.4rem;
+			height: 0.44rem;
+			@include border-radius;
+			line-height: 12%;
+			margin: 0.28rem auto;
+			margin-top: 0;
+			border: $border-basis;
+			@include box-shadow;
+			span {
+				float: $float-left;
+				width: 0.36rem;
+				height: 0.36rem;
+				margin: 4px;
+			}
+
+			input {
+				float: $float-left;
+				height: 0.34rem;
+				box-sizing: $box-sizing;
+				margin-top: 4px;
+				width: 3.8rem;
+				border: 0;
+				border-left: 2px solid #4292c7;
+				font-size: $font-size14;
+				text-indent: $font-size16;
+			}
+			input::-webkit-input-placeholder {
+				color: $font-gray;
+			}
+			input::-moz-placeholder {
+				/* Mozilla Firefox 19+ */
+				color: $font-gray;
+			}
+			input:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18 */
+				color: $font-gray;
+			}
+			input:-ms-input-placeholder {
+				/* Internet Explorer 10-11 */
+				color: $font-gray;
+			}
+		}
+
+		p:first-child span {
+			background: url("../img/bg_people.png") no-repeat;
+			background-size: contain;
+		}
+
+		p:nth-child(2) span {
+			background: url("../img/bg_lock.png") no-repeat;
+			background-size: contain;
+		}
+
+		#lock {
+			position: $position-relative;
+		}
+	}
+	
+	.login_formNew {
+		width: 5.36rem;
+		height: 3.64rem;
+		margin-top: 0.4rem;
+		float: $float-left;
+	}
+
+	.btn_login {
+		width: 4.4rem;
+		height: 0.5rem;
+		line-height: 0.5rem;
+		margin: 0.7rem auto;
+		color: $font-button;
+		font-weight: 900;
+		font-size: $font-size16;
+
+		span a {
+			margin-right: 10px;
+			color: $font-button;
+		}
+
+		button {
+			width: 1.3rem;
+			height: 0.5rem;
+			font-size: $font-size14;
+			border: $border-basis;
+			color: $font-button;
+			background: $font-white;
+			float: $float-right;
+			@include border-radius;
+			outline: none;
+			line-height: 0.2rem;
+			cursor: $cursor-pointer;
+			&:hover{
+				background-color: $font-button;
+				color: $font-white;
+			}
+		}
+	}
+	
+	.qrcode {
+		width: 2.86rem;
+		height: 2rem;
+		float: $float-left;
+		margin-top: 0.7rem;
+
+		div img {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+
+		div:nth-child(2) {
+			float: $float-right;
+		}
+		div {
+			float: $float-left;
+			width: 1.25rem;
+			font-size: $font-size15;
+		}
+		span {
+			float: $float-left;
+			width: $width-hundred;
+			text-align: $text-center;
+			margin-top: 0.3rem;
+		}
+	}
+	// register（注册）页面
+	.btn-back-home {
+		color: #337ab7;
+		text-decoration: none;
+		cursor: $cursor-pointer;
+		font-size: $font-size15;
+
+		&:hover{
+			color: #15212f;
+		}
+	}
+
+	.zhuCe {
+		width: 5.5rem;
+		height: 3.8rem;
+		background: url("../img/dailog.png") no-repeat;
+		background-size: $background-size;
+		position: $position-fixed;
+		@include position-center;
+
+		.login_form{
+			p {
+				width: 4.4rem;
+				height: 0.44rem;
+				@include border-radius;
+				line-height: 12%;
+				margin: 0.18rem auto;
+				margin-top: 0;
+				border: $border-basis;
+				@include box-shadow;
+			}
+
+			p:first-child span {
+				background: url("../img/bg_people.png") no-repeat;
+				background-size: contain;
+			}
+
+			p:nth-child(2) span {
+				background: url("../img/bg_lock.png") no-repeat;
+				background-size: contain;
+			}
+
+			p:nth-child(3) span {
+				background: url("../img/bg_lock.png") no-repeat;
+				background-size: contain;
+			}
+
+			p:nth-child(4) span {
+				background: url("../img/bg_lock.png") no-repeat;
+				background-size: contain;
+			}
+
+			.tiaoKuan {
+				height: 0.25rem;
+				margin-left: 0.4rem;
+				margin-top: 0.3rem;
+			}
+
+			.tiaoKuan {
+				input {
+					display: block;
+					margin-top: -11px;
+				}
+
+				span {
+					display: block;
+					margin-left: 20px;
+					margin-top: -19px;
+					font-size: 16px;
+					a {
+						color: $font-button;
+						&:hover{
+							color: green;
+						}
+					}
+				}
+			}
+			.button-group-wrapper {
+				height: 0.55rem;
+				margin-top: 0.2rem;
+
+				button {
+					margin-left: 0.5rem;
+					width: 1.8rem;
+				}
+			}
+		} 
+	}
+
+	.banBen {
+		width: 2.86rem;
+		height: 2rem;
+		float: $float-left;
+		margin-top: 0.38rem;
+
+		div img {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+
+		div:nth-child(2) {
+			float: $float-right;
+			margin-right: 0.25rem;
+		}
+
+		div {
+			float: $float-left;
+			width: 1.25rem;
+			font-size: $font-size15;
+			margin-top: 0.7rem;
+		}
+
+		span {
+			float: $float-left;
+			width: $width-hundred;
+			text-align: $text-center;
+			margin-top: 0.3rem;
+		}
+	}
+}
+
+.btn[disabled] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    @include box-shadow-none;
+    opacity: .65;
+}
+
+.btn {
+    display: inline-block;
+    color: $font-white;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: $font-size14;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: $text-center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: $cursor-pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    @include border-radius;
+    background-color: $font-button;
+}
+/*打开文件*/
+#openfile {
+    box-sizing: $box-sizing;
+    height: $width-hundred;
+    padding: 0.92rem 0 0;
+	position: $position-relative;
+
+	.main {
+		height: $width-hundred;
+		width: $width-hundred;
+		box-sizing: $box-sizing;
+		position: $position-relative;
+		display: flex;
+	}
+
+	.header {
+		height: 0.92rem;
+		width: $width-hundred;
+		background: url("../img/openFile/openfile_bgline.png");
+		margin: -0.92rem 0 0;
+		position: $position-absolute;
+	}
+
+	.log {
+		font-size: 34px;
+		float: $float-left;
+		color: $font-white;
+		font-family: "SimSun";
+		font-weight: 900;
+		width: 220px;
+		line-height: 0.92rem;
+		margin-left: 51px;
+		@include user-select;
+	}
+
+	.quit {
+		margin-top: 0.25rem;
+		height: 0.24rem;
+		position: $position-absolute;
+		right: 0.8rem;
+
+		img.round_pic {
+			width: 0.35rem;
+			height: 0.35rem;
+			margin-left: 0.2rem;
+			cursor: $cursor-pointer;
+		}
+
+		span.safety_quit {
+			color: $font-white;
+			font-size: 16px;
+			margin-left: 9px;
+			margin-top: 3px;
+		}
+	}
+}
+
+/* 主界面关于我们 */
+#about_us {
+    width: 4.2rem;
+    height: 250px;
+    background: $font-white;
+    font-size: $font-size14;
+    font-weight: bold;
+    position: $position-relative;
+    ;
+    right: 3.5rem;
+    top: 0.3rem;
+    z-index: 99;
+    background-color: #f1f0f0;
+    display: none;
+}
+
+@media screen and (max-height:600px) {
+    #about_us {
+        height: 4.2rem;
+    }
+}
+
+/* 登录页面关于 */
+#login .about_us_login {
+    width: 4.2rem;
+    height: 250px;
+    background: $font-white;
+    font-size: $font-size14;
+    font-weight: bold;
+    z-index: 99;
+    background-color: #f1f0f0;
+    display: none;
+    right: 1.1rem;
+    top: 0rem;
+    float: $float-right;
+}
+
+@media screen and (max-height:600px) {
+    #login .about_us_login {
+        height: 4.2rem;
+    }
+}
+
+#about_us {
+	.about_head {
+		height: 0.45rem;
+		background-color: $font-white;
+		
+		img:nth-child(1) {
+			width: 1.3rem;
+			height: 0.3rem;
+			margin-top: 0.1rem;
+			margin-left: 0.3rem;
+			margin-right: 2rem;
+		}
+
+		span {
+			margin-right: 2.6rem;
+		}
+	}
+
+	.about_dms {
+		img {
+			width: 4.3rem;
+			display: block;
+			margin: 0 auto;
+			margin-top: 0.15rem;
+		}
+
+		span {
+			display: inline-block;
+			margin-top: 0.1rem;
+			margin-left: 0.3rem;
+		}
+
+		a {
+			margin-left: 0.3rem;
+		}
+	}
+
+	.about_detail {
+		margin: 0.1rem 0.3rem;
+
+		ul {
+			width: 3.3rem;
+			border: 1px solid #2b0cda;
+			padding-left: 0.1rem;
+
+			li {
+				padding: 0.02rem 0;
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+
+		.versionSerialNumber{
+			word-wrap:break-word;
+			overflow:hidden;
+
+			span:nth-child(2){
+				word-break:break-all;
+			}
+		}
+		input {
+			display: block;
+			margin: 0.05rem auto;
+			width: 1.5rem;
+			padding: 0;
+			height: 0.39rem;
+			border: 1px solid #15212f;
+			@include border-radius2;
+			font-size: $font-size16;
+		}
+	}
+}
+
+// 遮罩
+#md-overlay {
+    position: $position-fixed;
+    width: $width-hundred;
+    height: $width-hundred;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0.5;
+    background: rgba(1, 1, 1, 0.6);
+    @include transition-result;
+}
+// 目录树样式
+#openfile{
+	.fileTree {
+		height: $width-hundred;
+		width: 220px;
+		background: $font-white;
+		position: $position-relative;
+		float: $float-left;
+		font-size: $font-size16;
+
+		.tree {
+			float: $float-left;
+			height: $width-hundred;
+			width: 90%
+		}
+	}
+
+	.tree_switch {
+		height: $width-hundred;
+		width: 15px;
+		position: $position-absolute;
+		right: 0;
+		background: #ebebeb;
+		cursor: w-resize;
+	}
+}
+#btn_switch {
+    background: url("../img/openFile/sj.png") no-repeat;
+    height: 50px;
+    cursor: $cursor-pointer;
+    width: 15px;
+    background-position: $text-center;
+    position: $position-absolute;
+    top: 50%;
+    right: -7px;
+    transform: translate(-50%, -50%);
+}
+
+#openfile {
+	.rightnav {
+		width: 0.64rem;
+		height: $width-hundred;
+		background: $font-white;
+		float: $float-right;
+
+		img {
+			float: $float-left;
+			margin: 3px 2px 0 2px;
+			width: 0.12rem;
+			height: 0.16rem;
+		}
+	}
+
+	.iconControl{
+		li {
+			height: 0.45rem;
+			width: $width-hundred;
+		}
+		li:first-child img {
+			float: $float-left;
+			margin: 8px;
+		}
+		li:nth-child(2) img {
+			float: $float-left;
+			margin-left: 0.16rem;
+		}
+	}
+
+	.icon {
+		padding-bottom: 0.2rem;
+		border-bottom: 2px solid #727171;
+	}
+
+	.bottomnav {
+		width: 7.5rem;
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+	.center {
+		height: 100%;
+		flex: 1;
+		position: $position-relative;
+		display: flex;
+	}
+
+	.bottomnsj {
+		height: 0.18rem;
+		width: 7.5rem;
+		margin: 0 auto;
+		border-bottom: 2px solid #b4b5b5;
+
+		#pic_click {
+			width: 7.5rem;
+			height: 0.18rem;
+			background: url("../img/openFile/bottom_sj.png") no-repeat;
+			background-position: 50% 50%;
+		}
+	}
+
+	.bottomnav {
+		#imgUl {
+			width: 7.2rem;
+			height: 0.76rem;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			li {
+				width: 0.48rem;
+				height: 0.48rem;
+			}
+			// 页面菜单按钮样式与图片配置
+			.modelTree {
+				background: url("../img/openFile/bottomicon1.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.allShow {
+				background: url("../img/openFile/bottomicon2.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.sectioning {
+				background: url("../img/openFile/bottomicon3.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.fileManage {
+				background: url("../img/openFile/bottomicon4.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.allRestore {
+				background: url("../img/openFile/bottomicon5.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.setSky {
+				background: url("../img/openFile/bottomicon6.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.quiteModel {
+				background: url("../img/openFile/bottomicon7.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			.setBannerLi {
+				background: url("../img/openFile/thumbnail.png") no-repeat;
+				background-size: $background-size;
+			}
+			
+			// markup图标
+			.markUpImg {
+				background: url("../img/openFile/show2D.png") no-repeat;
+				background-size: $background-size;
+			}
+			// markup3D图标
+			.MarkUpdImg {
+				background: url("../img/openFile/bottomicon8.png") no-repeat;
+				background-size: $background-size;
+			}
+
+			// viewCube图标
+			.viewCubeShow {
+				background: url("../img/openFile/viewCube.png") no-repeat;
+				background-size: $background-size;
+			}
+			// 漫游操作
+			.roamShow {
+				background: url("../img/openFile/roam.png") no-repeat;
+				background-size: $background-size;
+			}
+			// 测量操作
+			.measureImg {
+				background: url("../img/openFile/measure.png") no-repeat;
+				background-size: $background-size;
+			}
+			// 阿凡达操作
+			.afdImg {
+				background: url("../img/openFile/roam.png") no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+	// markup上滑处图标
+	#markUp-submenu {
+		.navLi:nth-child(1) {
+			background: url("../img/openFile/cloudline.png") no-repeat -5px;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(2) {
+			background: url("../img/openFile/elipse.png") no-repeat -5px;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(3) {
+			background: url("../img/openFile/arrow.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(4) {
+			background: url("../img/openFile/line.png") no-repeat -5px;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(5) {
+			background: url("../img/openFile/polyLine.png") no-repeat -5px;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(6) {
+			background: url("../img/openFile/freehand.png") no-repeat -5px;
+			background-size: $background-size;
+		}
+	}
+	// markup3D上滑处图标
+	#zlight-submenu{
+		.navLi:nth-child(1) {
+			background: url("../img/openFile/Circle3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(2) {
+			background: url("../img/openFile/Polyline3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(3) {
+			background: url("../img/openFile/Arrow3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(4) {
+			background: url("../img/openFile/HemisPhere3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(5) {
+			background: url("../img/openFile/Cuboid3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(6) {
+			background: url("../img/openFile/Polygon3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(7) {
+			background: url("../img/openFile/Rect3DMarkup.png") no-repeat;
+			background-size: $background-size;
+		}
+	}
+
+	// 测量操作上滑处图标
+	#measure-submenu{
+		.navLi:nth-child(1) {
+			background: url("../img/openFile/measure_p.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(2) {
+			background: url("../img/openFile/measure_v.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(3) {
+			background: url("../img/openFile/angle.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(4) {
+			background: url("../img/openFile/area.png") no-repeat;
+			background-size: $background-size;
+		}
+	}
+
+	// 阿凡达操作上滑处图标
+	#afd-submenu {
+		.navLi:nth-child(1) {
+			background: url("../img/openFile/e_afd.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(2) {
+			background: url("../img/openFile/e_gravity.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(3) {
+			background: url("../img/openFile/e_first.png") no-repeat;
+			background-size: $background-size;
+		}
+		.navLi:nth-child(4) {
+			background: url("../img/openFile/e_add.png") no-repeat;
+			background-size: $background-size;
+		}
+	}
+}
+
+/*剖切上滑处图标*/
+#section-submenu {
+	.sectionLi:nth-child(1){
+		background: url("../img/openFile/e_N.png") no-repeat;
+		background-size: $background-size;
+	}
+	.sectionLi:nth-child(2){
+		background: url("../img/openFile/e_S.png") no-repeat;
+		background-size: $background-size;
+	}
+	.sectionLi:nth-child(3){
+		background: url("../img/openFile/e_E.png") no-repeat;
+		background-size: $background-size;
+	}
+	.sectionLi:nth-child(4){
+		background: url("../img/openFile/e_W.png") no-repeat;
+		background-size: $background-size;
+	}
+	.sectionLi:nth-child(5){
+		background: url("../img/openFile/e_EL.png") no-repeat;
+		background-size: $background-size;
+	}
+	.sectionLi:nth-child(6){
+		background: url("../img/openFile/e_EL2.png") no-repeat;
+		background-size: $background-size;
+	}
+}
+// 文件管理
+#openfile{
+	.dailogBox {
+		width: $width-hundred;
+		/* margin-bottom: 77px;position: relative; */
+	}
+	.dailog {
+		width: 11.7rem;
+		height: 5.2rem;
+		background: $font-white;
+		position: $position-absolute;
+		@include position-center;
+		@include border-radius8;
+		z-index: 10
+	}
+	// 功能按钮操作
+	.dailogTop {
+		width: 100%;
+		height: 0.9rem;
+		background: #dadbda;
+		-webkit-border-radius: 8px 8px 0 0;
+		-moz-border-radius: 8px 8px 0 0;
+		-o-border-radius: 8px 8px 0 0;
+		-ms-border-radius: 8px 8px 0 0;
+		border-radius: 8px 8px 0 0;
+	}
+	.fucBtn {
+		width: 96%;
+		margin: auto;
+		height: 0.4rem;
+		padding-top: 0.4rem;
+
+		li {
+			float: $float-left;
+			width: 1.4rem;
+			height: 0.38rem;
+			background: #587a9c;
+			color: $font-white;
+			font-size: $font-size16;
+			margin-right: 10px;
+			@include border-radius;
+			cursor: $cursor-pointer;
+
+			b {
+				float: $float-left;
+				height: 0.28rem;
+				margin-top: 3px;
+				letter-spacing:2px;
+			}
+		}
+
+		span {
+			float: $float-left;
+			height: 0.28rem;
+			width: 0.28rem;
+			margin: 3px;
+		}
+
+		li:nth-child(4) b {
+			letter-spacing: 0px;
+			letter-spacing:2px;
+		}
+
+		li:nth-child(5) b {
+			letter-spacing: 0px;
+			letter-spacing:2px;
+		}
+
+		li:first-child span {
+			background: url("../img/openFile/upload.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(2) span {
+			background: url("../img/openFile/delete.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(3) span {
+			background: url("../img/openFile/share.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(4) span {
+			background: url("../img/openFile/cancel.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(5) span {
+			background: url("../img/openFile/load_open.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(6) span {
+			background: url("../img/menu/add.png") no-repeat;
+			background-size: contain;
+		}
+
+		li:nth-child(7) span {
+			background: url("../img/menu/trash.png") no-repeat;
+			background-size: contain;
+		}
+	}
+}
+// 文件管理内容样式 
+#openfile{
+	.dailogCon {
+		height: 4.3rem;
+
+		.catalog{
+			height: 4.15rem;
+			float: $float-left;
+		}
+	}
+
+	.dailogFile {
+		width: 2rem;
+		background: #e2e7e9;
+		cursor: pointer;
+		height: 94%;
+		float: $float-left;
+		-webkit-border-radius: 0 0 0 8px;
+		-moz-border-radius: 0 0 0 8px;
+		-o-border-radius: 0 0 0 8px;
+		-ms-border-radius: 0 0 0 8px;
+		border-radius: 0 0 0 8px;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		li {
+			background: #e2e7e9;
+			width: 2rem;
+			border-bottom: 1px solid #d8d9d9;
+			text-align: $text-center;
+			line-height: 40px;
+			font-size: 16px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-indent: 10px;
+
+			input {
+				background: #fff;
+				height: 0.6rem;
+				width: 2rem;
+				border-bottom: 1px solid #d8d9d9;
+				text-align: $text-center;
+				line-height: 40px;
+				font-size: $font-size16;
+				position: $position-absolute;
+				left: 0;
+				top:0;
+			}
+			&.actived {
+				background: $font-white;
+			}
+		}
+	}
+
+	.model {
+		float: $float-left;
+		width: 8.8rem;
+		height: 92%;
+		padding: 0 0.44rem;
+
+		h3.thumbnail_file {
+			font-size: $font-size16;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			float: $float-left;
+		}
+
+		h3.search_file {
+			font-size: $font-size16;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			float: $float-left;
+		}
+
+		h3.move_file {
+			font-size: $font-size16;
+			height: 0.6rem;
+			line-height: 0.6rem;
+			float: $float-left;
+			margin-left: 0.2rem;
+		}
+
+		h3 {
+			u {
+				color: $font-button;
+				margin-right: 15px;
+				cursor: $cursor-pointer;
+			}
+			input {
+				width: 1.5rem;
+				padding: 0;
+				height: 0.34rem;
+				float: $float-right;
+				margin-top: 0.1rem;
+				border: 2px solid #587a9c;
+				text-indent: 10px;
+				@include border-radius;
+				z-index: 55;
+			}
+			button {
+				width: 1rem;
+				padding: 0;
+				height: 0.39rem;
+				float: $float-right;
+				margin-top: 0.1rem;
+				z-index: 555;
+				border: 2px solid #587a9c;
+				@include border-radius;
+				color: $font-white;
+				background: #587a9c;
+				font-size: $font-size16;
+			}
+		}
+
+		.modelCon {
+			ul {
+				display: flex;
+				width: 8.8rem;
+				height: 3.2rem;
+				-webkit-flex-wrap: wrap;
+				-moz-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				-o-flex-wrap: wrap;
+				flex-wrap: wrap;
+				align-items: flex-start;
+			}
+			li {
+				width: 2.04rem;
+				height: 1.4rem;
+				position: $position-relative;
+				margin: 0 0.5%;
+
+				b {
+					display: none;
+				}
+				&:hover b {
+					display: flex;
+					width: 200px;
+					position: $position-absolute;
+					background: #e3e9ee;
+					font-size: $font-size16;
+					left: 20px;
+					top: 10px;
+					z-index: 666;
+					color: #666;
+				}
+			}
+			span,input {
+				position: $position-absolute;
+				width: 1.54rem;
+				height: 30px;
+				font-size: $font-size15;
+				background: #273645;
+				color: $font-white;
+				bottom: 0;
+				line-height: 30px;
+				padding: 0 0.25rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				text-align: $text-center;
+				left: 0;
+			}
+		}
+	}
+}
+
+/*属性页面*/
+.propertyCon {
+    color: #000;
+    display: none;
+    font-size: 16px;
+    width: 4.5rem;
+    height: 70%;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+	z-index: 1;
+	
+	h5 {
+		font-size: 14px;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem;
+
+		b {
+			margin-left: 10px;
+		}
+	}
+}
+@media screen and (max-height:500px) {
+    .propertyCon {
+        height: 80%;
+    }
+}
+
+@media screen and (max-height:480px) {
+    .propertyCon #commentList {
+        height: 55%;
+    }
+}
+
+@media screen and (min-height:600px) {
+    .propertyCon #commentList {
+        height: 80%;
+    }
+}
+// 属性表格样式
+#prolis {
+    overflow-y: auto;
+    height: 93%;
+}
+
+#prolist {
+    height: $width-hundred;
+	overflow: auto;
+	
+	#am-hint {
+		.hint {
+			border-right: 1px solid #aaa;
+			width: 1.5rem;
+			font-size: 13px;
+			word-break: break-all;
+			word-wrap: break-word;
+			text-overflow: ellipsis;
+			text-align: $text-center;
+			white-space: normal;
+		}
+		.hint_three {
+			border-right: 1px solid #aaa;
+			font-size: 13px;
+			text-align: $text-center;
+		}
+	}
+}
+
+/* markup页面 */
+.markupCon {
+    width: 230px;
+    height: 300px;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+	z-index: 1;
+	h5 {
+		font-size: 14px;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem;
+
+		.fanAn {
+			margin-left: 10px;
+		}
+		.zhongXin {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				letter-spacing: 7px
+			}
+		}
+		.ouLa {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				letter-spacing: 7px
+			}
+		}
+		.suoFang {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				padding-right: 7px
+			}
+		}
+		.btn_yuan {
+			margin-left: 10%;
+			margin-bottom: 2%;
+		}
+		.pouFen_btn {
+			width: 120px;
+			height: 30px;
+			font-size: $font-size14;
+			cursor: $cursor-pointer;
+			background-color: #587a9b;
+			color: $font-white;
+			margin-right: 3%
+		}
+		.huanYuan {
+			width: 120px;
+			height: 30px;
+			font-size: $font-size14;
+			color: $font-white;
+			background-color: #587a9b;
+			cursor: $cursor-pointer;
+		}
+	}
+
+	.jiaoTou {
+		display: inline-flex;
+		float: right;
+		margin: 2px 8px;
+		width: 20px;
+		height: 12px;
+		background: url("../img/property_arrow.png") no-repeat;
+		background-size: contain;
+	}
+}
+
+@media screen and (max-height:400px) {
+    .markupCon {
+        height: 90%;
+    }
+}
+
+/* 剖切功能面板 */
+.sectionCon {
+    color: #000;
+    font-size: $font-size16;
+    width: 4.2rem;
+    height: 490px;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+    z-index: 1;
+    overflow-y: auto;
+	overflow-x: hidden;
+	h5 {
+		font-size: 14px;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem
+	}
+	.section-direction {
+		.section-content{
+			text-align: $text-center;
+			.section-title{
+				margin-top: 5px;
+				span{
+					font-size: $font-size14;
+					font-weight: bold;
+				}
+			}
+			.division{
+				height: 4px;
+				@include border-radius;
+				background-color: #ccc;
+				width: 90%;
+				text-align: $text-center;
+				display: inline-block;
+			}
+			.section-face{
+				font-size: $font-size14;
+				font-weight: bold;
+				margin: 5px 0px; 
+				background-color: $font-white;
+				@include border-radius;
+				width: 1.5rem;
+			}
+			.radio-box{
+				margin: 0px 50px;
+				width: $font-size16;
+				height: $font-size16;
+				position: $position-relative;
+				right: 10px;
+			}
+			.check-box{
+				width: 17px;
+				height: 17px;
+			}
+		}
+	}
+	// 剖切下拉框 
+	.section-drop{
+		text-align: $text-center;
+		.section-text {
+			span{
+				font-size: $font-size14;
+				font-weight: bold;
+			}
+			.input-box{
+				width: 1.5rem;
+				margin: 5px 20px;
+			}
+			.input-box1{
+				position: $position-relative;
+				left: $font-size14;
+			}
+		}
+	}
+	// 剖切显示文字
+	.section-font{
+		text-align: $text-center;
+		margin-top: 15px;
+		.section-font1{
+			font: 14px arial;
+			font-weight: bold;
+			.section-xyz,.section-hpr{
+				display: inline-block;
+				margin: 5px 0px;
+				span{
+					font-size: 14px;
+					font-weight: bold;
+					display: inline-block;
+					width: 25px;
+				}
+			}
+		}
+		.section-button{
+			text-align: right;
+			margin-right: 35px;
+			margin-top: 10px;
+			input{
+				background-color: $font-white;
+				width: 1.1rem;
+				@include border-radius;
+			}
+		}
+	}
+}
+
+@media screen and (max-height:500px) {
+    .sectionCon {
+        height: 80%;
+        overflow-y: auto;
+   		overflow-x: hidden;
+    }
+}
+.active{
+    font-size: $font-size14;
+    font-weight: bold;
+    color: rgb(218, 211, 211);
+    margin: 5px 0px; 
+    background-color: $font-white;
+    @include border-radius;
+    width: 1.5rem;
+    background-color: rgb(83, 78, 78);
+}
+
+/* 2Dmarkup管理功能面板 */
+.markup2DCon {
+    color: #000;
+    display: none;
+    font-size: $font-size16;
+    width: 4.5rem;
+    height: 70%;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+	z-index: 1;
+	h5 {
+		font-size: $font-size14;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem;
+	}
+}
+@media screen and (max-height:500px) {
+    .markup2DCon {
+        height: 80%;
+    }
+}
+/* 3Dmarkup管理功能面板 */
+.markup3DCon {
+    color: #000;
+    display: none;
+    font-size: $font-size16;
+    width: 4.5rem;
+    height: 70%;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+	z-index: 1;
+	h5 {
+		font-size: $font-size14;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem
+	}
+}
+
+@media screen and (max-height:500px) {
+    .markup3DCon {
+        height: 80%;
+    }
+}
+/*设置页面*/
+.set {
+	width: 100%;
+	.setlog {
+		max-width: 5.5rem;
+		width: 90%;
+		height: 5.2rem;
+		background: $font-white;
+		position: $position-absolute;
+		@include position-center;
+		left: -9%;
+		@include border-radius;
+		z-index: 11;
+		.tianDi {
+			display: flex;
+			justify-content: space-around;
+			div {
+				display: inline-flex;
+				margin-top: 5px;
+				select {
+					width: 1.4rem;
+					@include border-radius2;
+					border: 1.5px solid #587a9b;
+					option {
+						background-color: #eaeaea;
+						border: none;
+						margin-top: 20px;
+					}
+				}
+				img {
+					margin-left: -27px;
+					pointer-events: none;
+				}
+			}
+		}
+		.setTop {
+			width: $width-hundred;
+			height: 0.4rem;
+			background: #dadbda;
+			-webkit-border-radius: 8px 8px 0 0;
+			-moz-border-radius: 8px 8px 0 0;
+			-o-border-radius: 8px 8px 0 0;
+			-ms-border-radius: 8px 8px 0 0;
+			border-radius: 8px 8px 0 0;
+			p {
+				position: $position-absolute;
+				margin: 2px 10px;
+				font-size: $font-size16;
+			}
+			img {
+				padding: 0.1rem;
+				padding-left: 5rem
+			}
+		}
+		.fengGe1 {
+			padding-left: 0.2rem;
+			height: 0.2rem;
+			hr {
+				margin-top: -10px;
+				margin-left: 38px
+			}
+			span {
+				display: block;
+			}
+		}
+		.fengGe2 {
+			padding-left: 0.2rem;
+			height: 0.3rem;
+			hr {
+				margin-top: -10px;
+				margin-left: 38px
+			}
+			span {
+				display: block;
+			}
+		}
+		.fengGe3 {
+			padding-left: 0.2rem;
+			height: 0.3rem;
+			margin-top: 25px;
+			hr {
+				margin-top: -8px;
+				margin-left: 38px;
+			}
+			span {
+				display: block;
+			}
+		}
+		.doubleContent{
+			letter-spacing: 2px;
+			position: $position-relative;
+			left: 10%;
+		}
+		.li_three {
+			ul {
+				li:not(:last-child) span {
+					letter-spacing: 3px;
+					margin-right: 10px;
+				}
+				li:last-child span {
+					margin-right: $font-size14;
+				}
+			}
+			div {
+				display: flex;
+				justify-content: space-around;
+				margin-top: 0.1rem;
+				input {
+					border: 1px solid #587a9b;
+					@include border-radius;
+					width: 2rem;
+					padding-left: 0.1rem
+				}
+			}
+			div:not(:last-child) span {
+				letter-spacing: 2px;
+			}
+		} 
+	}
+}
+.progress {
+    height: 0.55rem;
+    margin-top: -0.5rem
+}
+
+#Demo {
+    width: 4.8rem;
+    margin-left: -0.75rem;
+    margin-top: -0.02rem;
+}
+
+#Main {
+    width: 70%;
+    margin: 0 auto;
+}
+#scrollBar {
+    width: 80%;
+    margin-top: 50px;
+    @include border-radius8;
+    cursor: $cursor-pointer;
+    height: 12px;
+    margin-left: 30px;
+    border: 1px solid #000
+}
+
+#scroll_Track {
+    width: 0px;
+    height: 12px;
+    background-color: #587a9b;
+    @include border-radius8;
+}
+
+#scroll_Thumb {
+    width: 13px;
+    height: 13px;
+    background-color: #c4c4c5;
+    @include border-radius8;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    -moz-box-shadow: 0px 0px 5px #ccc;
+    -o-box-shadow: 0px 0px 5px #ccc;
+    -ms-box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    position: $position-absolute;
+    cursor: $cursor-pointer;
+    margin-top: -14px;
+}
+
+#scrollBarTxt {
+    margin-top: -0.18rem;
+    font-size: $font-size14;
+    border: 1px solid #587a9b;
+    margin-left: 3.9rem;
+    width: 0.4rem;
+    height: 0.2rem;
+    text-align: $text-center;
+    @include border-radius;
+}
+
+.sun {
+    position: $position-absolute;
+    margin-top: -0.24rem;
+    font-size: $font-size15;
+    margin-left: 3.3rem;
+}
+
+#btn_all {
+    position: $position-absolute;
+    bottom: 0.1rem;
+	right: 0.3rem;
+	button{
+		margin: 0 10px;
+	}
+}
+@media screen and (min-width:1300px) {
+    #btn_all {
+        position: $position-absolute;
+	    bottom: 0.2rem;
+	    right: 0.3rem;
+    }
+}
+
+.btnOne {
+    width: 1.3rem;
+    height: 0.35rem;
+    background-color: #587a9b;
+    color: $font-white;
+    border-width: thin;
+    @include border-radius;
+}
+
+.btnTwo {
+    width: 1.3rem;
+    height: 0.35rem;
+    background-color: #587a9b;
+    color: $font-white;
+    border-width: thin;
+    @include border-radius;
+}
+
+.btnThree {
+    width: 1.3rem;
+    height: 0.35rem;
+    background-color: #587a9b;
+    color: $font-white;
+    border-width: thin;
+    @include border-radius;
+}
+/* 配色页面 */
+.peiSeCon {
+    width: 230px;
+    height: 340px;
+    background: $font-white;
+    position: $position-absolute;
+    border: 2px solid #acabab;
+    top: 0;
+    right: 0.64rem;
+	z-index: 1;
+	h5 {
+		font-size: $font-size14;
+		height: 0.24rem;
+		background: url("../img/property_top_bg.png");
+		border-bottom: 1px solid #acabab;
+		margin: 0;
+		line-height: 0.24rem;
+		.fanAn {
+			margin-left: 10px;
+			font-size: $font-size15;
+		}
+		.zhongXin {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				letter-spacing: 7px;
+			}
+		}
+		.ouLa {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				letter-spacing: 7px;
+			}	
+		}
+		.suoFang {
+			padding-left: 10px;
+			input {
+				width: 0.5rem;
+				height: 0.15rem;
+				margin: 0 5px;
+			}
+			span:first-child {
+				padding-right: 7px;
+			}
+		}
+		.btn_yuan {
+			margin-left: 2%;
+			margin-top: 2%;
+		}
+		.pouFen_btn {
+			width: 95px;
+			height: 25px;
+			font-size: $font-size14;
+			cursor: $cursor-pointer;
+			background-color: #587a9b;
+			color: $font-white;
+			margin-right: 3%;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-o-border-radius: 4px;
+			-ms-border-radius: 4px;
+			border-radius: 4px;
+			border: 2px solid #ccc;
+		}
+		.huanYuan {
+			width: 95px;
+			height: 25px;
+			font-size: $font-size14;
+			color: $font-white;
+			background-color: #587a9b;
+			cursor: $cursor-pointer;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-o-border-radius: 4px;
+			-ms-border-radius: 4px;
+			border-radius: 4px;
+			border: 2px solid #ccc;
+		}
+	}
+	.jiaoTou {
+		display: inline-flex;
+		float: $float-right;
+		margin: 2px 8px;
+		width: 20px;
+		height: 12px;
+		background: url("../img/property_arrow.png") no-repeat;
+		background-size: contain;
+	}
+	
+}
+
+@media screen and (max-height:600px) {
+    .peiSeCon {
+        height: 98%;
+    }
+}
+
+.contextmenu {
+    display: none;
+    position: $position-absolute;
+    z-index: 333;
+    width: 180px;
+    padding: 5px 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    -o-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    -ms-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-color: rgba(0, 0, 0, .3);
+	font-size: $font-size15;
+	&:before {
+		content: '';
+		display: inline-block;
+		position: $position-absolute;
+		top: -7px;
+		left: 9px;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid rgba(0, 0, 0, .2);
+		border-left: 7px solid transparent;
+		border-bottom-color: rgba(0, 0, 0, .2);
+	}
+	.header {
+		padding: 8px 15px;
+		color: $font-white;
+		border-bottom: 1px solid rgba(0, 0, 0, .8);
+	}
+	ul {
+		padding-bottom: 5px;
+		color: $font-white;
+		li {
+			display: none;
+			padding: 6px 20px;
+			margin-top: 10px;
+			cursor: default;
+			&:hover {
+				background-color: rgba(0, 0, 0, .5);
+			}
+			img {
+				display: inline-block;
+				padding-right: 10px;
+				width: 22px;
+				height: 22px;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+/** 拖动插件 */
+#main {
+    width: 300px;
+    margin: 150px auto;
+}
+
+.scroll-bar {
+    height: 36px;
+    position: $position-relative;
+    margin-top: 10px;
+}
+
+.entire-bar {
+    width: $width-hundred;
+    height: 12px;
+    top: 12px;
+    left: 0;
+    position: $position-absolute;
+    background: #dedede;
+    @include border-radius;
+}
+
+.action-bar {
+    top: 13px;
+    height: 12px;
+    position: $position-absolute;
+    background: #4F94CD;
+    @include border-radius;
+}
+
+.action-block {
+    top: 11px;
+    width: 7px;
+    height: 15px;
+    cursor: $cursor-pointer;
+    position: $position-absolute;
+    background: #c4c4c5;
+}
+
+#control-group .showAmount {
+    position: $position-relative;
+    margin-top: -30px;
+    margin-left: 355px;
+}
+#showArea {
+    width: 50px;
+    height: 20px;
+    @include border-radius;
+    border-width: thin;
+    background-color: #4F94CD;
+    text-align: $text-center;
+}
+.tanCeng {
+    margin: 0 auto;
+}
+.zheZhao {
+    position: $position-fixed;
+    width: $width-hundred;
+    height: $width-hundred;
+    top: 0;
+    left: 0;
+    z-index: 995;
+    background: rgba(0, 0, 0, 0.1);
+    @include transition-result;
+}
+.tanChuang {
+    width: 5rem;
+    color: #727171;
+    background: $font-white;
+    position: $position-absolute;
+    top: 20%;
+    left: 37%;
+    padding-left: 20px;
+    z-index: 999;
+	@include border-radius;
+	.baoCun {
+		text-align: $text-center;
+	}
+}
+// 模型上传
+.moChuang {
+    margin-top: 15px;
+    display: flex;
+	justify-content: space-between;
+	h2 {
+		font-size: 25px;
+		font-weight: 500;
+		color: #000;
+		color: #727171;
+		display: inline;
+	}
+	img {
+		width: 0.2rem;
+		height: 0.2rem;
+		margin: -2px 20px;
+	}
+}
+// 模型名称
+.moMing {
+    width: 77.7%;
+    padding: 10px;
+    border: 1px solid #b4b3b3;
+    @include border-radius2;
+    font-size: $font-size15;
+    outline: none;
+}
+.jiaZai {
+    color: #727171;
+    width: 97%;
+    font-size: 16px;
+    margin-bottom: -10px;
+}
+.jiaZai .wenJian {
+    margin-top: $font-size15;
+    width: 4.5rem;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+.bao_Btn {
+    width: 1.5rem;
+    height: 0.5rem;
+    font-size: 16px;
+    font-weight: 100;
+    background-color: #3498db;
+    color: $font-white;
+    border-width: thin;
+    cursor: $cursor-pointer;
+    outline: none;
+	@include border-radius;
+	&:hover {
+		background-color: $font-button;
+		border: 1px solid $font-white;
+		color: $font-white;
+	}
+}
+#close_open {
+    position: $position-absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+}
+// 分页样式
+.whj_jqueryPaginationCss-1 {
+    display: inline-block;
+	width: 9rem;
+	div {
+		display: inline-block;
+		vertical-align: bottom;
+		height: 20px;
+		line-height: 20px;
+		@include border-radius2;
+	}
+	.whj_padding {
+		padding: 1px 5px;
+	}
+	.whj_bgc {
+		background-color: $font-white;
+		color: #000;
+	}
+	.whj_border {
+		border: 1px solid #5b9fd6;
+	}
+	.whj_color {
+		color: #000;
+	}
+	.whj_hover:hover {
+		background-color: #5b9fd6;
+		color: $font-white;
+		cursor: $cursor-pointer;
+	}
+	.whj_checked {
+		background-color: #587a9c;
+		color: $font-white;
+	}
+	.whj_hoverDisable {
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+		pointer-events: none;
+	}
+	select {
+		height: 24px;
+		vertical-align: bottom;
+		padding: 0px;
+		outline: none;
+		@include border-radius2;
+	}
+	input {
+		padding: 0px;
+		height: 22px;
+		outline: none;
+		text-align: $text-center;
+		width: 0.35rem;
+		vertical-align: bottom;
+		@include border-radius2;
+	}
+	div,input,select {
+		margin: 2px;
+	}
+	/*只有设置显示总页数时，该样式才生效*/
+	.whj_totalSizeSingle {
+		margin-left: -8px;
+	}
+}
+#pagination_4 {
+    font-size: $font-size15;
+    font-weight: 500;
+}
+
+/*新增markUp3D样式*/
+#zlight-nav {
+    display: block;
+    position: $position-relative;
+    width: $width-hundred;
+}
+/*************
+* SUBMENU
+*************/
+/* markup */
+#markUp-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    @include box-shadow-black;
+    position: $position-absolute;
+    bottom: 83%;
+	right: 32%;
+	>li{
+		float: none;
+		position: $position-relative;
+		display: block;
+		margin: 30% 0;
+		@include transition-result;
+	}
+}
+/* mark3d */
+#zlight-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    @include box-shadow-black;
+    position: $position-absolute;
+	bottom: 136%;
+	>li {
+		position: $position-relative;
+		display: block;
+		margin: 30% 0;
+		@include transition-result;
+	}
+}
+@media (min-width: 769px) {
+    #zlight-main-nav {
+        display: block;
+    }
+}
+/* 测量 */
+#measure-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    @include box-shadow-black;
+    position: $position-absolute;
+	bottom: 83%;
+	>li {
+		margin: 40% 0;
+		@include transition-result;
+	}
+}
+/* 阿凡达 */
+#afd-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    @include box-shadow-black;
+    position: $position-absolute;
+	bottom: 83%;
+	>li {
+		margin: 40% 0;
+		@include transition-result;
+	}
+}
+/* 剖切 */
+#section-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    @include box-shadow-black;
+    position: $position-absolute;
+    bottom: 83%;
+	right: 77%;
+	>li {
+		float: none;
+		position: relative;
+		display: block;
+		margin: 40% 0;
+		@include transition-result;
+	}
+}
+/* 页面行内样式改为外部样式引入 */
+#progress-div {
+    width: $width-hundred;
+    height: $width-hundred;
+    text-align: center;
+    position: $position-absolute;
+    display: none;
+    z-index: 9999;
+}
+
+#progress-bar {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+}
+
+#webgl {
+    position: absolute;
+    top: 0px;
+}
+
+#model-tree {
+    overflow: auto;
+    float: $float-left;
+    width: 90%;
+    height: 99%;
+}
+
+#dir-select {
+    font-size: $font-size14;
+    height: 28px;
+    width: 120px;
+}
+
+#home_page {
+    position: $position-relative;
+    width: 32px;
+    height: 21px;
+    padding: 0;
+    background: $font-white;
+    color: #000;
+    float: none;
+}
+
+#webgl-setting-div {
+    display: none;
+    font-size: 14px;
+}
+
+#transparent {
+    margin: 8% 5%;
+    touch-action: pan-x;
+}
+#lineWidth {
+    margin: 8% 5%;
+    touch-action: pan-x;
+}
+
+#transparent-slider {
+    width: 200px;
+    float: $float-left;
+}
+
+#attr-add-div {
+    width: 4rem;
+    height: 240px;
+    border: 1px solid $font-white;
+    font-size: $font-size14;
+    @include position-center;
+    background-color: $font-white;
+    display: none;
+    position: $position-absolute;
+}
+
+#attrGroupSelect {
+    display: block;
+    width: 3.5rem;
+    height: 0.4rem;
+}
+
+#attrName {
+    width: 65%;
+    height: 0.3rem;
+}
+
+#attrValue {
+    margin: 5px 0;
+    width: 65%;
+    height: 0.3rem;
+}
+
+#attr-edit-div {
+    width: 3.5rem;
+    height: 3.2rem;
+    border: 1px solid $font-white;
+    @include position-center;
+    background-color: $font-white;
+    display: none;
+    position: $position-absolute;
+}
+
+#newAttrValue {
+    margin: 5px;
+    width: 2.8rem;
+    height: 1.3rem;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+	width:5px;
+	background-color: #dadbda;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+	border-radius:10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+	border-radius:10px;
+	background:#587a9c;
+}
+/* 内层滚动槽 */
+::-webkit-scrollbar-track-piece {
+	width:5px;
+	height:5px;
+} 

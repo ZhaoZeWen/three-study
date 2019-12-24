@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>中部自适应</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/* 第一种靠浮动 */ 
+		/* .left,.right{
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+		.left{
+			float: left;
+		}
+		.right{
+			float: right;
+		}
+		.center{
+			margin: 0 200px;
+			height: 100px;
+			background-color: green;
+		} */
+
+		/* 第二种靠绝对定位 */
+		/* .left,.right{
+			position: absolute;
+			width: 200px;
+			height: 100px;
+			background-color: aqua;
+		}
+		.left{
+			left: 0;
+		}
+		.right{
+			right: 0;
+		}
+		.center{
+			margin: 0 200px;
+			height: 100px;
+			background-color: black;
+		} */
+
+		/* 第三种靠flex布局 */
+		.content{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+		.left,.right{
+			width: 100px;
+			height: 200px;
+			background-color: rebeccapurple;
+		}
+		.center{
+			flex: 1;
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<!-- 靠浮动实现中部自适应 中间块（center）必须放在最后 （因为浮动导致） -->
+	<div class="content">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</div>
+	<input type="button" value="点击" id="btn4">
+	<input type="checkbox" name="复选框" id="btn7">
+	<script>
+		// 用原生js给一个按钮绑定两个onclick事件
+		//事件监听 绑定多个事件
+		var btn4 = document.getElementById("btn4");
+		btn4.addEventListener("click",hello1);
+		btn4.addEventListener("click",hello2);
+		function hello1(){
+		 	alert("hello 1");
+		}
+		function hello2(){
+		 	alert("hello 2");
+		}
+	</script>
+	<script>
+		// 数组去重
+		var arr = ['abc','abcd','sss','2','d','t','2','ss','f','22','d'];
+		//定义一个新的数组
+		var s = [];
+		//遍历数组
+		for (let i = 0; i < arr.length; i++) {
+			if(s.indexOf(arr[i]) == -1){ //判断在s数组中是否存在，不存在则push到s数组中
+				s.push(arr[i]);
+			}
+		} 
+		console.log(s);
+	</script>
+</body>
+</html>
