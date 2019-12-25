@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<input type="button" value="重复最多的字符" onclick="MostString(str)">
+	</div>
+	<script>
+		let str = "dsagadsgsdfhgfdhggkjerwhtdjhfasdhfjaksglgafdjfjsfjadhf";
+		function MostString(str){
+			const arr = str.split(/\s*/);           // 把字符串转换为数组
+			const str2 = arr.sort().join("");		// 首先进行排序，这样结果会把相同的字符放在一起，然后再转换为字符串
+			let value = "";
+			let index = 0;
+			str2.replace(/(\w)\1*/g,function($0,$1){      //匹配字符
+				if(index < $0.length){
+					index = $0.length;    //index是出现次数
+					value = $1;			  //value是对应字符
+				}
+			})
+			console.log(`出现最多的字符是:${value}，重复出现次数是:${index}`);
+		}
+	</script>
+</body>
+</html>
